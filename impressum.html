@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum — Nastasja Kaufhold</title>
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'night': '#0a0f1d',
+            'card': '#131a30',
+            'slate-soft': '#1e293b',
+            'gold': '#d4af37',
+            'text-primary': '#ffffff',
+            'text-secondary': '#cbd5e0',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #0a0f1d;
+      color: #cbd5e0;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+
+<body class="bg-night text-text-secondary min-h-screen">
+
+  <!-- Header -->
+  <header class="border-b border-white/5 py-6 px-6">
+    <div class="max-w-4xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="text-text-primary font-semibold hover:text-gold transition-colors">
+        ← Zurück zur Startseite
+      </a>
+      <p class="font-mono text-xs uppercase tracking-wider text-gold">Impressum</p>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="max-w-3xl mx-auto px-6 py-16 md:py-24">
+
+    <h1 class="text-4xl md:text-5xl font-bold text-text-primary mb-12 tracking-tight">
+      Impressum
+    </h1>
+
+    <p class="text-sm text-text-secondary/60 italic mb-12">
+      Diese Seite wird in den nächsten Tagen mit den finalen Angaben ergänzt.
+      Aktuell Platzhalter zur Erfüllung der Mindest-Pflichten nach § 5 TMG.
+    </p>
+
+    <section class="mb-12">
+      <h2 class="text-xl md:text-2xl font-semibold text-text-primary mb-4">
+        Anbieter
+      </h2>
+      <p class="text-base leading-relaxed">
+        Nastasja Kaufhold<br>
+        [Straße + Hausnummer]<br>
+        [PLZ + Ort]<br>
+        Deutschland
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-xl md:text-2xl font-semibold text-text-primary mb-4">
+        Kontakt
+      </h2>
+      <p class="text-base leading-relaxed">
+        E-Mail: <a href="mailto:kontakt@nastasjakaufhold.de" class="text-gold hover:underline">kontakt@nastasjakaufhold.de</a>
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-xl md:text-2xl font-semibold text-text-primary mb-4">
+        Berufshaftpflichtversicherung
+      </h2>
+      <p class="text-base leading-relaxed">
+        [Versicherer + Anschrift]<br>
+        [Räumlicher Geltungsbereich der Versicherung]
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-xl md:text-2xl font-semibold text-text-primary mb-4">
+        Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
+      </h2>
+      <p class="text-base leading-relaxed">
+        Nastasja Kaufhold (Anschrift wie oben)
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-xl md:text-2xl font-semibold text-text-primary mb-4">
+        Haftungsausschluss
+      </h2>
+      <p class="text-base leading-relaxed mb-4">
+        Trotz sorgfältiger inhaltlicher Kontrolle übernehme ich keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 py-8 px-6 mt-16">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-xs text-text-secondary/60 font-mono">&copy; 2026 Nastasja Kaufhold</p>
+    </div>
+  </footer>
+
+</body>
+</html>

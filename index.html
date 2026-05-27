@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nastasja Kaufhold — Wirkungsarchitektin für Future-Skills- und KI-Initiativen</title>
+  <meta name="description" content="Wirkungs-Analyse für Krankenkassen, Klinikverbünde und öffentliche Verwaltungen. Ich zeige Ihnen, welche Future-Skills- und KI-Programme wirken und welche das Budget verbrennen.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nastasja Kaufhold — Wirkungsarchitektin">
+  <meta property="og:description" content="Wirkungs-Analyse für Future-Skills- und KI-Programme im öffentlichen Sektor.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nastasjakaufhold.de">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'night': '#0a0f1d',
+            'card': '#131a30',
+            'slate-soft': '#1e293b',
+            'gold': { DEFAULT: '#d4af37', soft: '#b8941f' },
+            'text-primary': '#ffffff',
+            'text-secondary': '#cbd5e0',
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['"JetBrains Mono"', '"SF Mono"', 'monospace'],
+          },
+          maxWidth: {
+            'content': '720px',
+            'narrow': '640px',
+            'wide': '1200px',
+          },
+          letterSpacing: {
+            'tight-headline': '-0.02em',
+            'kicker': '0.2em',
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: #0a0f1d;
+      color: #cbd5e0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Bento-Background mit subtilem Netzwerk-Muster */
+    .hero-bg {
+      background-color: #0a0f1d;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+        linear-gradient(135deg, #0a0f1d 0%, #131a30 100%);
+      position: relative;
+    }
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(212, 175, 55, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    /* Glassmorphism Karten */
+    .card-glass {
+      background: rgba(19, 26, 48, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s ease-in-out;
+    }
+    .card-glass:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212, 175, 55, 0.4);
+      box-shadow: 0 0 40px rgba(212, 175, 55, 0.08);
+    }
+
+    /* Gold-Border-Gradient */
+    .card-gold {
+      background: rgba(19, 26, 48, 0.8);
+      backdrop-filter: blur(12px);
+      border: 1px solid transparent;
+      background-image:
+        linear-gradient(rgba(19, 26, 48, 0.8), rgba(19, 26, 48, 0.8)),
+        linear-gradient(135deg, #d4af37 0%, #b8941f 50%, #d4af37 100%);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      transition: all 0.3s ease-in-out;
+    }
+    .card-gold:hover {
+      box-shadow: 0 0 60px rgba(212, 175, 55, 0.15);
+    }
+
+    /* CTA Button */
+    .btn-gold {
+      background-color: #d4af37;
+      color: #0a0f1d;
+      transition: all 0.3s ease;
+    }
+    .btn-gold:hover {
+      background-color: #b8941f;
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+      transform: translateY(-1px);
+    }
+    .btn-ghost {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      transition: all 0.3s ease;
+    }
+    .btn-ghost:hover {
+      border-color: rgba(212, 175, 55, 0.6);
+      background-color: rgba(212, 175, 55, 0.08);
+    }
+
+    /* Portrait Placeholder */
+    .portrait-placeholder {
+      background:
+        linear-gradient(135deg, #131a30 0%, #0a0f1d 100%);
+      border: 2px solid rgba(212, 175, 55, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 3/4;
+      border-radius: 12px;
+    }
+
+    /* FAQ Accordion */
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      padding-top: 0;
+      padding-bottom: 0;
+      transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    }
+    .faq-answer.open {
+      max-height: 500px;
+      padding-top: 0.75rem;
+      padding-bottom: 1.25rem;
+    }
+    .faq-chevron {
+      transition: transform 0.3s ease;
+    }
+    .faq-item.active .faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    /* Kicker (Mono kleine Caps in Gold) */
+    .kicker {
+      font-family: 'JetBrains Mono', monospace;
+      color: #d4af37;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* Gold Bullet */
+    .gold-bullet::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background-color: #d4af37;
+      border-radius: 50%;
+      margin-right: 12px;
+      margin-bottom: 3px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+
+<body class="bg-night text-text-secondary">
+
+  <!-- ============ HERO ============ -->
+  <section id="hero" class="hero-bg relative min-h-screen flex items-center justify-center px-6 py-20">
+    <div class="relative z-10 max-w-wide mx-auto w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+        <!-- Text-Block (60%) -->
+        <div class="lg:col-span-3">
+          <p class="kicker mb-6">Klarheit · Strategie · Wirkung</p>
+
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary tracking-tight-headline leading-tight mb-8">
+            Investitionen in Future Skills scheitern selten am Training. Sondern am System.
+          </h1>
+
+          <p class="text-base md:text-lg text-text-secondary leading-relaxed mb-10">
+            Ich bin Nastasja Kaufhold. Als Wirkungsarchitektin analysiere ich Future-Skills- und KI-Programme in Krankenkassen, Klinikverbünden und öffentlichen Verwaltungen — und zeige Ihnen, welche Ihrer Maßnahmen wirken und welche das Budget verbrennen.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="mailto:kontakt@nastasjakaufhold.de?subject=Erstgespr%C3%A4ch%20Wirkungs-Analyse" class="btn-gold font-semibold px-8 py-4 rounded-lg text-base inline-block text-center">
+              Erstgespräch vereinbaren
+            </a>
+            <a href="#wie-ich-arbeite" class="btn-ghost font-semibold px-8 py-4 rounded-lg text-base inline-block text-center">
+              Wie ich arbeite
+            </a>
+          </div>
+        </div>
+
+        <!-- Portrait (40%) -->
+        <div class="lg:col-span-2">
+          <div class="portrait-placeholder max-w-sm mx-auto lg:mx-0 lg:ml-auto">
+            <span class="font-mono text-8xl font-bold text-gold/40 tracking-tight-headline">NK</span>
+          </div>
+          <p class="font-mono text-xs uppercase tracking-wider text-text-secondary/60 mt-4 text-center lg:text-right max-w-sm mx-auto lg:ml-auto">
+            Nastasja Kaufhold
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRUST BAR ============ -->
+  <section id="trust" class="bg-slate-soft py-6 px-6 border-t border-b border-white/5">
+    <div class="max-w-wide mx-auto flex flex-col md:flex-row items-center justify-center gap-3 md:gap-8 text-center">
+      <span class="font-mono text-xs uppercase tracking-wider text-text-secondary">
+        Methodik:
+      </span>
+      <span class="font-mono text-xs uppercase tracking-wider text-text-primary">Kirkpatrick</span>
+      <span class="hidden md:inline text-gold/30">·</span>
+      <span class="font-mono text-xs uppercase tracking-wider text-text-primary">Phillips ROI</span>
+      <span class="hidden md:inline text-gold/30">·</span>
+      <span class="font-mono text-xs uppercase tracking-wider text-text-primary">Weinbauer-Heidel</span>
+      <span class="hidden md:inline text-gold/30">·</span>
+      <span class="font-mono text-xs uppercase tracking-wider text-text-primary">DIN ISO 29993</span>
+    </div>
+  </section>
+
+  <!-- ============ PROBLEM ============ -->
+  <section id="problem" class="bg-night py-20 md:py-28 px-6">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-text-primary leading-tight mb-10 tracking-tight-headline">
+        800.000 € für Weiterbildung. Und der Vorstand fragt nach ROI.
+      </h2>
+      <div class="space-y-6 text-base md:text-lg leading-relaxed text-text-secondary">
+        <p>
+          Sie verantworten ein hohes sechsstelliges Weiterbildungsbudget — und sollen beweisen, dass es wirkt. Aber Ihre Daten zeigen Teilnahmequoten und Zufriedenheits-Scores, nicht Verhaltensänderung im Alltag. Die unbequeme Wahrheit: Niemand im Haus weiß, ob die letzten zwölf KI-Schulungen tatsächlich zu anderer Arbeit geführt haben.
+        </p>
+        <p>
+          Gleichzeitig laufen Future-Skills- und KI-Initiativen ohne klares Wirkungs-Setup. Trainings werden geplant, ausgerollt, gefeedbackt — und versanden im Tagesgeschäft. Mitarbeitende sagen "war nett", Führungskräfte sagen "muss wohl gemacht werden", der Vorstand sagt "wo ist der Impact?".
+        </p>
+        <p>
+          Das Problem sitzt nicht im Training. Es sitzt im System dahinter: Transferbedingungen, Linien-Unterstützung, organisationale Realität. Genau die Schicht, die zwischen Inhalt und Wirkung steht — und die in keinem Standard-Evaluations-Bogen sichtbar wird.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AGITATION ============ -->
+  <section id="konsequenzen" class="bg-night py-20 md:py-28 px-6">
+    <div class="max-w-wide mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-text-primary leading-tight mb-14 text-center tracking-tight-headline max-w-3xl mx-auto">
+        Was passiert, wenn das System unsichtbar bleibt.
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card-glass rounded-xl p-8">
+          <div class="font-mono text-xs uppercase tracking-wider text-gold mb-4">01</div>
+          <p class="text-base text-text-secondary leading-relaxed">
+            Vorstands-Druck wächst — Weiterbildungs-Budget wird im nächsten Zyklus pauschal gekürzt statt gezielt umgesteuert.
+          </p>
+        </div>
+        <div class="card-glass rounded-xl p-8">
+          <div class="font-mono text-xs uppercase tracking-wider text-gold mb-4">02</div>
+          <p class="text-base text-text-secondary leading-relaxed">
+            Die nächste KI-Welle wird wieder ohne Wirksamkeits-Setup ausgerollt — und produziert dieselben Lernzettel-Erfolge und denselben Alltags-Stillstand.
+          </p>
+        </div>
+        <div class="card-glass rounded-xl p-8">
+          <div class="font-mono text-xs uppercase tracking-wider text-gold mb-4">03</div>
+          <p class="text-base text-text-secondary leading-relaxed">
+            L&D bleibt "Kurs-Buchungsstelle" statt strategischer Wirkungs-Hebel — und verliert den Anschluss an Operations, Finance und Vorstand.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRANSFORMATION ============ -->
+  <section id="transformation" class="bg-slate-soft py-20 md:py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-text-primary leading-tight mb-10 tracking-tight-headline">
+        Was sich ändert, wenn Wirkung messbar wird.
+      </h2>
+      <p class="text-base md:text-lg text-text-secondary leading-relaxed">
+        Sie wissen, welche Maßnahmen wirken — und welche nicht. Sie können dem Vorstand schwarz auf weiß zeigen, wo das Budget Wirkung erzeugt, wo es versickert, wo umgesteuert werden muss. Ihre KI-Schulungen kommen mit klaren Erfolgs-KPIs ans Ziel statt im Sand zu verlaufen. L&D wird vom Cost-Center zur wertschöpfenden Business-Unit — datengestützt, zukunftssicher, agil. Und Sie selbst gewinnen Souveränität in einer Position, die nach harten Zahlen verlangt.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ VALUE STACK ============ -->
+  <section id="hebel" class="bg-night py-20 md:py-28 px-6">
+    <div class="max-w-wide mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-text-primary text-center mb-4 tracking-tight-headline">
+        Drei Hebel. Eine Diagnose. Klare Empfehlung.
+      </h2>
+      <p class="text-base text-text-secondary text-center max-w-2xl mx-auto mb-14">
+        Was Sie aus einer Wirkungs-Analyse mitnehmen.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card-glass rounded-xl p-8">
+          <div class="font-mono text-xs uppercase tracking-wider text-gold mb-4">Hebel 01</div>
+          <h3 class="text-xl font-semibold text-text-primary mb-4">Wirkungs-Diagnose</h3>
+          <p class="text-base text-text-secondary leading-relaxed">
+            Eine strukturierte Analyse Ihrer aktuellen Transferlandschaft entlang der fünf PIX-Ebenen. Ergebnis: Ampel-Bewertung pro Maßnahme, Risiko-Heatmap, Wahrscheinlichkeits-Score für nachhaltigen Transfer.
+          </p>
+        </div>
+        <div class="card-glass rounded-xl p-8">
+          <div class="font-mono text-xs uppercase tracking-wider text-gold mb-4">Hebel 02</div>
+          <h3 class="text-xl font-semibold text-text-primary mb-4">Vorstands-tauglicher Bericht</h3>
+          <p class="text-base text-text-secondary leading-relaxed">
+            15–20-seitiger Bericht mit Executive Summary, Ampel-Logik und konkreten Handlungs-Empfehlungen — formuliert in der Sprache, die Ihr Vorstand spricht.
+          </p>
+        </div>
+        <div class="card-glass rounded-xl p-8">
+          <div class="font-mono text-xs uppercase tracking-wider text-gold mb-4">Hebel 03</div>
+          <h3 class="text-xl font-semibold text-text-primary mb-4">Betriebsrat-konforme Methodik</h3>
+          <p class="text-base text-text-secondary leading-relaxed">
+            22 Jahre Innensicht. Messung auf Kohorten-Ebene (Privacy by Design), keine individuelle Mitarbeiter-Überwachung — datenschutzkonform, mitbestimmungsfest.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GUIDE / ÜBER MICH ============ -->
+  <section id="ueber-mich" class="bg-slate-soft py-20 md:py-28 px-6">
+    <div class="max-w-wide mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-12 items-start">
+        <!-- Portrait (Platzhalter bis Foto verfügbar) -->
+        <div class="md:col-span-2">
+          <div class="portrait-placeholder">
+            <span class="font-mono text-7xl font-bold text-gold/40 tracking-tight-headline">NK</span>
+          </div>
+          <p class="font-mono text-xs uppercase tracking-wider text-text-secondary/60 mt-3 text-center">
+            Nastasja Kaufhold
+          </p>
+        </div>
+        <!-- Text -->
+        <div class="md:col-span-3">
+          <p class="kicker mb-4">Über mich</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-text-primary leading-tight mb-8 tracking-tight-headline">
+            22 Jahre Innensicht. Eine Außenperspektive.
+          </h2>
+          <div class="space-y-5 text-base md:text-lg text-text-secondary leading-relaxed">
+            <p>
+              Ich war zweiundzwanzig Jahre in der öffentlichen Verwaltung — von innen. E-Learning, Blended Learning, Transfer-Konzepte, KI-Befähigung. Ich kenne das Spiel zwischen Vorstand, Personal, Betriebsrat und Linie. Ich weiß, warum saubere Trainings im Alltag scheitern. Und ich weiß, was es braucht, damit sie es nicht tun.
+            </p>
+            <p>
+              Als zertifizierte Transferdesignerin (Weinbauer-Heidel-Schule) und KI-Managerin verbinde ich wissenschaftlich fundierte Methodik (Kirkpatrick, Phillips, Reu, PIX-Framework) mit der Praxis-Innensicht regulierter Großorganisationen. Mein Ansatz ist unabhängig: Ich verkaufe weder Trainings noch Tools — ich diagnostiziere und priorisiere.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SO FUNKTIONIERT'S ============ -->
+  <section id="wie-ich-arbeite" class="bg-night py-20 md:py-28 px-6">
+    <div class="max-w-wide mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-text-primary text-center mb-14 tracking-tight-headline max-w-3xl mx-auto leading-tight">
+        Von der Frage zur Entscheidung in drei Schritten.
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+        <div class="card-glass rounded-xl p-8">
+          <div class="font-mono text-3xl font-bold text-gold mb-4">01</div>
+          <h3 class="text-xl font-semibold text-text-primary mb-4">Auftrags-Canvas</h3>
+          <p class="text-sm uppercase tracking-wider text-text-secondary/60 font-mono mb-3">Tag 0</p>
+          <p class="text-base text-text-secondary leading-relaxed">
+            Wir klären in einem 90-Minuten-Workshop die wirkungsorientierten Fragen: Was soll sich ändern, woran wird das messbar, welche Stakeholder ziehen mit?
+          </p>
+        </div>
+        <div class="card-glass rounded-xl p-8">
+          <div class="font-mono text-3xl font-bold text-gold mb-4">02</div>
+          <h3 class="text-xl font-semibold text-text-primary mb-4">Diagnose</h3>
+          <p class="text-sm uppercase tracking-wider text-text-secondary/60 font-mono mb-3">Tag 1–10</p>
+          <p class="text-base text-text-secondary leading-relaxed">
+            Stakeholder-Interviews mit drei bis fünf Personen, Materialanalyse (LMS-Daten, Trainings-Unterlagen, Feedback-Bögen), Auswertung entlang der fünf PIX-Ebenen.
+          </p>
+        </div>
+        <div class="card-glass rounded-xl p-8">
+          <div class="font-mono text-3xl font-bold text-gold mb-4">03</div>
+          <h3 class="text-xl font-semibold text-text-primary mb-4">Bericht + Präsentation</h3>
+          <p class="text-sm uppercase tracking-wider text-text-secondary/60 font-mono mb-3">Tag 10–14</p>
+          <p class="text-base text-text-secondary leading-relaxed">
+            15–20-Seiten-Bericht mit Ampel-Logik, Risiko-Heatmap und konkreten Handlungs-Empfehlungen — plus persönliche Präsentation beim Auftraggeber.
+          </p>
+        </div>
+      </div>
+      <div class="text-center">
+        <a href="mailto:kontakt@nastasjakaufhold.de?subject=Erstgespr%C3%A4ch%20Wirkungs-Analyse" class="btn-gold font-semibold px-8 py-4 rounded-lg text-base inline-block">
+          Erstgespräch vereinbaren
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ANGEBOT ============ -->
+  <section id="angebot" class="bg-slate-soft py-20 md:py-28 px-6">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-text-primary text-center mb-14 tracking-tight-headline leading-tight">
+        Wirkungs-Analyse für Ihre Future-Skills- und KI-Initiativen.
+      </h2>
+
+      <!-- Hauptangebots-Karte -->
+      <div class="card-gold rounded-2xl p-10 md:p-12 mb-6">
+        <div class="kicker mb-4">Das Hauptangebot</div>
+        <h3 class="text-2xl md:text-3xl font-bold text-text-primary mb-4 tracking-tight-headline">
+          Wirkungs-Analyse
+        </h3>
+        <p class="text-base md:text-lg text-text-secondary leading-relaxed mb-8">
+          Eine strukturierte Diagnose Ihrer Future-Skills- und KI-Initiativen — entlang fünf wissenschaftlicher Wirkungs-Ebenen.
+        </p>
+
+        <p class="font-mono text-xs uppercase tracking-wider text-gold mb-4">Inkludierte Leistungen</p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start gap-3 text-base text-text-secondary">
+            <span class="text-gold flex-shrink-0 mt-2">●</span>
+            <span>Strukturierte Analyse Ihrer aktuellen Transferlandschaft</span>
+          </li>
+          <li class="flex items-start gap-3 text-base text-text-secondary">
+            <span class="text-gold flex-shrink-0 mt-2">●</span>
+            <span>Stakeholder-Interviews mit drei bis fünf Schlüsselpersonen</span>
+          </li>
+          <li class="flex items-start gap-3 text-base text-text-secondary">
+            <span class="text-gold flex-shrink-0 mt-2">●</span>
+            <span>Auswertung anhand der 12 Transferhebel und der Methodik nach Kirkpatrick, Phillips und Reu</span>
+          </li>
+          <li class="flex items-start gap-3 text-base text-text-secondary">
+            <span class="text-gold flex-shrink-0 mt-2">●</span>
+            <span>Ergebnis-Bericht mit Ampel-Bewertung, Risiko-Heatmap und konkreten Handlungs-Empfehlungen</span>
+          </li>
+          <li class="flex items-start gap-3 text-base text-text-secondary">
+            <span class="text-gold flex-shrink-0 mt-2">●</span>
+            <span>Persönliche Präsentation der Ergebnisse beim Auftraggeber</span>
+          </li>
+        </ul>
+
+        <div class="border-t border-white/10 pt-6 mb-8">
+          <p class="font-mono text-xs uppercase tracking-wider text-text-secondary/60 mb-2">Lieferformat</p>
+          <p class="text-base text-text-secondary">
+            Ein Tag Vor-Ort-Analyse oder remote, plus Bericht und Präsentation. Insgesamt zwei Wochen vom Kick-off bis zur Übergabe.
+          </p>
+        </div>
+
+        <a href="mailto:kontakt@nastasjakaufhold.de?subject=Erstgespr%C3%A4ch%20Wirkungs-Analyse" class="btn-gold font-semibold px-8 py-4 rounded-lg text-base inline-block w-full md:w-auto text-center">
+          Erstgespräch vereinbaren
+        </a>
+      </div>
+
+      <p class="text-sm text-text-secondary/60 text-center italic">
+        Aufbauend auf der Analyse begleite ich Sie auch in der Umsetzung — Details im Erstgespräch.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq" class="bg-night py-20 md:py-28 px-6">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-text-primary text-center mb-14 tracking-tight-headline">
+        Häufige Fragen.
+      </h2>
+      <div class="space-y-3">
+        <div class="faq-item card-glass rounded-xl">
+          <button class="faq-question w-full text-left px-6 py-5 flex items-center justify-between">
+            <span class="text-base md:text-lg font-semibold text-text-primary pr-4">
+              Wie messen Sie Wirkung datenschutzkonform und betriebsrats-fest?
+            </span>
+            <svg class="faq-chevron w-5 h-5 text-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer px-6">
+            <p class="text-base text-text-secondary leading-relaxed">
+              Auf Kohorten-Ebene (ab fünf Personen), niemals individuelle Mitarbeiter-Daten. Die Methodik ist explizit auf den Schutz psychologischer Sicherheit ausgelegt — daher mitbestimmungsfest und DSGVO-konform.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item card-glass rounded-xl">
+          <button class="faq-question w-full text-left px-6 py-5 flex items-center justify-between">
+            <span class="text-base md:text-lg font-semibold text-text-primary pr-4">
+              Wie lange dauert eine Diagnose?
+            </span>
+            <svg class="faq-chevron w-5 h-5 text-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer px-6">
+            <p class="text-base text-text-secondary leading-relaxed">
+              Zwei Wochen vom Kick-off bis zum Bericht. Davon ein Tag Stakeholder-Interviews (vor Ort oder remote), der Rest Aufbereitung und Präsentation.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item card-glass rounded-xl">
+          <button class="faq-question w-full text-left px-6 py-5 flex items-center justify-between">
+            <span class="text-base md:text-lg font-semibold text-text-primary pr-4">
+              Wie unterscheiden Sie sich von Haufe oder Cegos?
+            </span>
+            <svg class="faq-chevron w-5 h-5 text-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer px-6">
+            <p class="text-base text-text-secondary leading-relaxed">
+              Die verkaufen Seminare und messen den Erfolg ihrer eigenen Seminare. Ich bin unabhängig und bewerte das Gesamtsystem — auch Anbieter, die Sie bereits unter Vertrag haben.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item card-glass rounded-xl">
+          <button class="faq-question w-full text-left px-6 py-5 flex items-center justify-between">
+            <span class="text-base md:text-lg font-semibold text-text-primary pr-4">
+              Was passiert mit meinen Daten nach Projekt-Ende?
+            </span>
+            <svg class="faq-chevron w-5 h-5 text-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer px-6">
+            <p class="text-base text-text-secondary leading-relaxed">
+              Alle Rohdaten werden nach Projektabschluss gelöscht. Erkenntnisse aus anonymisierten Mustern fließen ausschließlich in meine eigene Methodik-Weiterentwicklung — nicht in Beratung für andere Klienten.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item card-glass rounded-xl">
+          <button class="faq-question w-full text-left px-6 py-5 flex items-center justify-between">
+            <span class="text-base md:text-lg font-semibold text-text-primary pr-4">
+              Können wir mit einem kleinen Pilot starten?
+            </span>
+            <svg class="faq-chevron w-5 h-5 text-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer px-6">
+            <p class="text-base text-text-secondary leading-relaxed">
+              Ja. Für die ersten drei Klienten gibt es ein Pilot-Format mit reduziertem Scope — ideal, um die Methodik im eigenen Haus zu testen, bevor Sie größere Maßnahmen damit absichern.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINALER CTA ============ -->
+  <section id="kontakt" class="bg-night py-20 md:py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl md:text-5xl font-bold text-text-primary mb-8 tracking-tight-headline leading-tight">
+        Sie haben das Budget. Lassen Sie uns zeigen, wo es wirkt.
+      </h2>
+      <p class="text-base md:text-lg text-text-secondary leading-relaxed mb-10 max-w-2xl mx-auto">
+        Ein 30-Minuten-Erstgespräch reicht, um zu klären, ob unsere Zusammenarbeit für Ihren Kontext sinnvoll ist. Kein Pitch, keine Verkaufs-Schleife — eine strukturierte Diagnose-Frage.
+      </p>
+      <a href="mailto:kontakt@nastasjakaufhold.de?subject=Erstgespr%C3%A4ch%20Wirkungs-Analyse" class="btn-gold font-semibold px-10 py-5 rounded-lg text-lg inline-block">
+        Erstgespräch vereinbaren
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-night border-t border-white/5 py-12 px-6">
+    <div class="max-w-wide mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="md:col-span-1">
+        <p class="text-lg font-bold text-text-primary mb-2">Nastasja Kaufhold</p>
+        <p class="font-mono text-xs uppercase tracking-wider text-gold">
+          Wirkungsarchitektin
+        </p>
+      </div>
+      <div>
+        <p class="font-mono text-xs uppercase tracking-wider text-text-secondary/60 mb-3">Navigation</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#hero" class="text-text-secondary hover:text-gold transition-colors">Startseite</a></li>
+          <li><a href="#hebel" class="text-text-secondary hover:text-gold transition-colors">Hebel</a></li>
+          <li><a href="#ueber-mich" class="text-text-secondary hover:text-gold transition-colors">Über mich</a></li>
+          <li><a href="#wie-ich-arbeite" class="text-text-secondary hover:text-gold transition-colors">Wie ich arbeite</a></li>
+          <li><a href="#angebot" class="text-text-secondary hover:text-gold transition-colors">Angebot</a></li>
+          <li><a href="#faq" class="text-text-secondary hover:text-gold transition-colors">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-mono text-xs uppercase tracking-wider text-text-secondary/60 mb-3">Kontakt &amp; Legal</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="mailto:kontakt@nastasjakaufhold.de" class="text-text-secondary hover:text-gold transition-colors">kontakt@nastasjakaufhold.de</a></li>
+          <li><a href="impressum.html" class="text-text-secondary hover:text-gold transition-colors">Impressum</a></li>
+          <li><a href="datenschutz.html" class="text-text-secondary hover:text-gold transition-colors">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-wide mx-auto mt-10 pt-6 border-t border-white/5 text-center">
+      <p class="text-xs text-text-secondary/60 font-mono">&copy; 2026 Nastasja Kaufhold</p>
+    </div>
+  </footer>
+
+  <!-- ============ SCHEMA-MARKUP ============ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nastasja Kaufhold",
+    "jobTitle": "Wirkungsarchitektin",
+    "url": "https://nastasjakaufhold.de",
+    "email": "kontakt@nastasjakaufhold.de",
+    "description": "Wirkungs-Analyse für Future-Skills- und KI-Initiativen in Krankenkassen, Klinikverbünden und öffentlichen Verwaltungen.",
+    "knowsAbout": [
+      "Lerntransfer",
+      "Wirkungsmessung",
+      "Kirkpatrick-Modell",
+      "Phillips ROI",
+      "DIN ISO 29993",
+      "Transferdesign",
+      "KI in der Personalentwicklung",
+      "Future Skills"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Wirkungs-Analyse",
+    "provider": {
+      "@type": "Person",
+      "name": "Nastasja Kaufhold"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Deutschland"
+    },
+    "audience": {
+      "@type": "BusinessAudience",
+      "audienceType": "Krankenkassen, Klinikverbünde, öffentliche Verwaltungen"
+    },
+    "description": "Strukturierte Diagnose Ihrer Future-Skills- und KI-Initiativen entlang wissenschaftlicher Wirkungs-Ebenen."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wie messen Sie Wirkung datenschutzkonform und betriebsrats-fest?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Auf Kohorten-Ebene (ab fünf Personen), niemals individuelle Mitarbeiter-Daten. Die Methodik ist explizit auf den Schutz psychologischer Sicherheit ausgelegt — daher mitbestimmungsfest und DSGVO-konform."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie lange dauert eine Diagnose?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Zwei Wochen vom Kick-off bis zum Bericht. Davon ein Tag Stakeholder-Interviews (vor Ort oder remote), der Rest Aufbereitung und Präsentation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie unterscheiden Sie sich von Haufe oder Cegos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Die verkaufen Seminare und messen den Erfolg ihrer eigenen Seminare. Ich bin unabhängig und bewerte das Gesamtsystem — auch Anbieter, die Sie bereits unter Vertrag haben."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was passiert mit meinen Daten nach Projekt-Ende?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Alle Rohdaten werden nach Projektabschluss gelöscht. Erkenntnisse aus anonymisierten Mustern fließen ausschließlich in meine eigene Methodik-Weiterentwicklung — nicht in Beratung für andere Klienten."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Können wir mit einem kleinen Pilot starten?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Für die ersten drei Klienten gibt es ein Pilot-Format mit reduziertem Scope — ideal, um die Methodik im eigenen Haus zu testen, bevor Sie größere Maßnahmen damit absichern."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ============ JS ============ -->
+  <script>
+    // FAQ Accordion
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.querySelector('.faq-question').addEventListener('click', () => {
+        const answer = item.querySelector('.faq-answer');
+        const isOpen = answer.classList.contains('open');
+        document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!isOpen) {
+          answer.classList.add('open');
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // Open first FAQ by default
+    const firstFaq = document.querySelector('.faq-item');
+    if (firstFaq) {
+      firstFaq.querySelector('.faq-answer').classList.add('open');
+      firstFaq.classList.add('active');
+    }
+  </script>
+</body>
+</html>
