@@ -51,7 +51,10 @@
   </script>
 
   <style>
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
     body {
       background-color: #0a0f1d;
       color: #cbd5e0;
@@ -173,6 +176,16 @@
       font-weight: 500;
     }
 
+    /* Mobile Menu Animation */
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .mobile-menu.open {
+      max-height: 500px;
+    }
+
     /* Gold Bullet */
     .gold-bullet::before {
       content: '';
@@ -190,8 +203,49 @@
 
 <body class="bg-night text-text-secondary">
 
+  <!-- ============ HEADER ============ -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-night/70 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-wide mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#hero" class="flex flex-col group">
+        <span class="text-text-primary font-bold text-lg leading-tight tracking-tight-headline group-hover:text-gold transition-colors">Nastasja Kaufhold</span>
+        <span class="font-mono text-[10px] uppercase tracking-widest text-gold/80 leading-tight mt-0.5">Wirkungsarchitektin</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="#ueber-mich" class="text-sm text-text-secondary hover:text-gold transition-colors">Über mich</a>
+        <a href="#wie-ich-arbeite" class="text-sm text-text-secondary hover:text-gold transition-colors">Wie ich arbeite</a>
+        <a href="#angebot" class="text-sm text-text-secondary hover:text-gold transition-colors">Angebot</a>
+        <a href="#faq" class="text-sm text-text-secondary hover:text-gold transition-colors">FAQ</a>
+        <a href="mailto:kontakt@nastasjakaufhold.de?subject=Erstgespr%C3%A4ch%20Wirkungs-Analyse" class="btn-gold font-semibold px-5 py-2.5 rounded-lg text-sm">
+          Erstgespräch
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="lg:hidden text-text-primary p-2" aria-label="Menü öffnen">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu lg:hidden border-t border-white/5 bg-night/95 backdrop-blur-md">
+      <nav class="px-6 py-4 flex flex-col gap-1">
+        <a href="#ueber-mich" class="text-sm text-text-secondary hover:text-gold py-3 border-b border-white/5">Über mich</a>
+        <a href="#wie-ich-arbeite" class="text-sm text-text-secondary hover:text-gold py-3 border-b border-white/5">Wie ich arbeite</a>
+        <a href="#angebot" class="text-sm text-text-secondary hover:text-gold py-3 border-b border-white/5">Angebot</a>
+        <a href="#faq" class="text-sm text-text-secondary hover:text-gold py-3 border-b border-white/5">FAQ</a>
+        <a href="mailto:kontakt@nastasjakaufhold.de?subject=Erstgespr%C3%A4ch%20Wirkungs-Analyse" class="btn-gold font-semibold px-5 py-3 rounded-lg text-sm text-center mt-3">
+          Erstgespräch
+        </a>
+      </nav>
+    </div>
+  </header>
+
   <!-- ============ HERO ============ -->
-  <section id="hero" class="hero-bg relative min-h-screen flex items-center justify-center px-6 py-20">
+  <section id="hero" class="hero-bg relative min-h-screen flex items-center justify-center px-6 pt-[108px] md:pt-[140px] pb-20">
     <div class="relative z-10 max-w-wide mx-auto w-full">
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
         <!-- Text-Block (60%) -->
@@ -589,8 +643,6 @@
       <div>
         <p class="font-mono text-xs uppercase tracking-wider text-text-secondary/60 mb-3">Navigation</p>
         <ul class="space-y-2 text-sm">
-          <li><a href="#hero" class="text-text-secondary hover:text-gold transition-colors">Startseite</a></li>
-          <li><a href="#hebel" class="text-text-secondary hover:text-gold transition-colors">Hebel</a></li>
           <li><a href="#ueber-mich" class="text-text-secondary hover:text-gold transition-colors">Über mich</a></li>
           <li><a href="#wie-ich-arbeite" class="text-text-secondary hover:text-gold transition-colors">Wie ich arbeite</a></li>
           <li><a href="#angebot" class="text-text-secondary hover:text-gold transition-colors">Angebot</a></li>
@@ -725,6 +777,19 @@
     if (firstFaq) {
       firstFaq.querySelector('.faq-answer').classList.add('open');
       firstFaq.classList.add('active');
+    }
+
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('open');
+      });
+      // Close menu after click on any nav link
+      mobileMenu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => mobileMenu.classList.remove('open'));
+      });
     }
   </script>
 </body>
