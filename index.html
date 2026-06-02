@@ -219,11 +219,14 @@
   <section id="hero" class="relative min-h-screen flex items-center px-6 pt-[108px] md:pt-[140px] pb-20 overflow-hidden">
     <!-- Hero Background Image -->
     <div class="absolute inset-0 z-0">
-      <img src="assets/nastasja-hero.png" alt="Nastasja Kaufhold — Wirkungsarchitektin" class="w-full h-full object-cover" style="object-position: 70% center;">
-      <!-- Gradient overlay for text legibility (links dunkel, rechts transparent) -->
-      <div class="absolute inset-0 hidden lg:block" style="background: linear-gradient(to right, rgba(15,23,42,0.96) 0%, rgba(15,23,42,0.88) 35%, rgba(15,23,42,0.5) 60%, rgba(15,23,42,0.15) 100%);"></div>
-      <!-- Mobile: vertikaler Verlauf für Text-Lesbarkeit oben -->
-      <div class="absolute inset-0 lg:hidden" style="background: linear-gradient(to bottom, rgba(15,23,42,0.92) 0%, rgba(15,23,42,0.85) 50%, rgba(15,23,42,0.6) 100%);"></div>
+      <!-- Desktop: Bild rechts positioniert (Nastasja steht rechts neben dem Text) -->
+      <img src="assets/nastasja-hero.png" alt="Nastasja Kaufhold — Wirkungsarchitektin" class="hidden lg:block w-full h-full object-cover" style="object-position: 75% center;">
+      <!-- Mobile: Bild als dezenter Hintergrund, Position auf Gesicht -->
+      <img src="assets/nastasja-hero.png" alt="" aria-hidden="true" class="lg:hidden w-full h-full object-cover" style="object-position: 85% center; opacity: 0.35;">
+      <!-- Desktop-Overlay: links dunkel, rechts transparent -->
+      <div class="absolute inset-0 hidden lg:block" style="background: linear-gradient(to right, rgba(15,23,42,0.97) 0%, rgba(15,23,42,0.92) 30%, rgba(15,23,42,0.5) 58%, rgba(15,23,42,0.05) 100%);"></div>
+      <!-- Mobile-Overlay: komplett abgedunkelt für Text-Lesbarkeit -->
+      <div class="absolute inset-0 lg:hidden" style="background: linear-gradient(to bottom, rgba(15,23,42,0.93) 0%, rgba(15,23,42,0.88) 40%, rgba(15,23,42,0.78) 100%);"></div>
     </div>
 
     <div class="relative z-10 max-w-wide mx-auto w-full">
@@ -411,7 +414,7 @@
         <!-- Portrait (echtes Bild) -->
         <div class="md:col-span-2">
           <div class="rounded-xl overflow-hidden border border-gold/30" style="aspect-ratio: 4/3;">
-            <img src="assets/nastasja-ueber-mich.png" alt="Nastasja Kaufhold" class="w-full h-full object-cover" style="object-position: 60% center;">
+            <img src="assets/nastasja-ueber-mich.png" alt="Nastasja Kaufhold" class="w-full h-full object-cover" style="object-position: center;">
           </div>
           <p class="font-mono text-xs uppercase tracking-wider text-text-secondary/60 mt-3 text-center">
             Nastasja Kaufhold
