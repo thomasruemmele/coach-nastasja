@@ -4,10 +4,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'night': '#0a0f1d',
+        'night': '#0F172A',
         'card': '#131a30',
         'slate-soft': '#1e293b',
-        'gold': { DEFAULT: '#d4af37', soft: '#b8941f' },
+        'gold': { DEFAULT: '#C8A96B', soft: '#A88C5C' },
         'text-primary': '#ffffff',
         'text-secondary': '#cbd5e0',
       },
