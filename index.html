@@ -216,39 +216,35 @@
   </header>
 
   <!-- ============ HERO ============ -->
-  <section id="hero" class="hero-bg relative min-h-screen flex items-center justify-center px-6 pt-[108px] md:pt-[140px] pb-20">
+  <section id="hero" class="relative min-h-screen flex items-center px-6 pt-[108px] md:pt-[140px] pb-20 overflow-hidden">
+    <!-- Hero Background Image -->
+    <div class="absolute inset-0 z-0">
+      <img src="assets/nastasja-hero.png" alt="Nastasja Kaufhold — Wirkungsarchitektin" class="w-full h-full object-cover" style="object-position: 70% center;">
+      <!-- Gradient overlay for text legibility (links dunkel, rechts transparent) -->
+      <div class="absolute inset-0 hidden lg:block" style="background: linear-gradient(to right, rgba(15,23,42,0.96) 0%, rgba(15,23,42,0.88) 35%, rgba(15,23,42,0.5) 60%, rgba(15,23,42,0.15) 100%);"></div>
+      <!-- Mobile: vertikaler Verlauf für Text-Lesbarkeit oben -->
+      <div class="absolute inset-0 lg:hidden" style="background: linear-gradient(to bottom, rgba(15,23,42,0.92) 0%, rgba(15,23,42,0.85) 50%, rgba(15,23,42,0.6) 100%);"></div>
+    </div>
+
     <div class="relative z-10 max-w-wide mx-auto w-full">
-      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
-        <!-- Text-Block (60%) -->
-        <div class="lg:col-span-3">
-          <p class="kicker mb-6">Klarheit · Strategie · Wirkung</p>
+      <div class="max-w-2xl">
+        <p class="kicker mb-6">Klarheit · Strategie · Wirkung</p>
 
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary tracking-tight-headline leading-tight mb-8">
-            Investitionen in Future Skills scheitern selten am Training. Sondern am System.
-          </h1>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary tracking-tight-headline leading-tight mb-8">
+          Investitionen in Future Skills scheitern selten am Training. Sondern am System.
+        </h1>
 
-          <p class="text-base md:text-lg text-text-secondary leading-relaxed mb-10">
-            Ich bin Nastasja Kaufhold. Als Wirkungsarchitektin analysiere ich Future-Skills- und KI-Programme in Krankenkassen, Klinikverbünden und öffentlichen Verwaltungen — und zeige Ihnen, welche Maßnahmen Wirkung erzeugen — und wo Budget ohne nachhaltigen Transfer versickert.
-          </p>
+        <p class="text-base md:text-lg text-text-secondary leading-relaxed mb-10">
+          Ich bin Nastasja Kaufhold. Als Wirkungsarchitektin analysiere ich Future-Skills- und KI-Programme in Krankenkassen, Klinikverbünden und öffentlichen Verwaltungen — und zeige Ihnen, welche Maßnahmen Wirkung erzeugen, und wo Budget ohne nachhaltigen Transfer versickert.
+        </p>
 
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="mailto:kontakt@nastasjakaufhold.de?subject=Erstgespr%C3%A4ch%20Wirkungs-Analyse" class="btn-gold font-semibold px-8 py-4 rounded-lg text-base inline-block text-center">
-              Erstgespräch vereinbaren
-            </a>
-            <a href="#wie-ich-arbeite" class="btn-ghost font-semibold px-8 py-4 rounded-lg text-base inline-block text-center">
-              Wie ich arbeite
-            </a>
-          </div>
-        </div>
-
-        <!-- Portrait (40%) -->
-        <div class="lg:col-span-2">
-          <div class="portrait-placeholder max-w-sm mx-auto lg:mx-0 lg:ml-auto">
-            <span class="font-mono text-8xl font-bold text-gold/40 tracking-tight-headline">NK</span>
-          </div>
-          <p class="font-mono text-xs uppercase tracking-wider text-text-secondary/60 mt-4 text-center lg:text-right max-w-sm mx-auto lg:ml-auto">
-            Nastasja Kaufhold
-          </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="mailto:kontakt@nastasjakaufhold.de?subject=Erstgespr%C3%A4ch%20Wirkungs-Analyse" class="btn-gold font-semibold px-8 py-4 rounded-lg text-base inline-block text-center">
+            Erstgespräch vereinbaren
+          </a>
+          <a href="#wie-ich-arbeite" class="btn-ghost font-semibold px-8 py-4 rounded-lg text-base inline-block text-center">
+            Wie ich arbeite
+          </a>
         </div>
       </div>
     </div>
@@ -412,10 +408,10 @@
   <section id="ueber-mich" class="bg-slate-soft py-20 md:py-28 px-6">
     <div class="max-w-wide mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-5 gap-12 items-start">
-        <!-- Portrait (Platzhalter bis Foto verfügbar) -->
+        <!-- Portrait (echtes Bild) -->
         <div class="md:col-span-2">
-          <div class="portrait-placeholder">
-            <span class="font-mono text-7xl font-bold text-gold/40 tracking-tight-headline">NK</span>
+          <div class="rounded-xl overflow-hidden border border-gold/30" style="aspect-ratio: 4/3;">
+            <img src="assets/nastasja-ueber-mich.png" alt="Nastasja Kaufhold" class="w-full h-full object-cover" style="object-position: 60% center;">
           </div>
           <p class="font-mono text-xs uppercase tracking-wider text-text-secondary/60 mt-3 text-center">
             Nastasja Kaufhold
